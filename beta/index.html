@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Site.Anilot</title>
+        <meta name="description" content="Innovative power.">
+        <meta name="viewport" content="width=device-width">
+        <meta name="keywords" content="Yanglei Li, Anilot, Site.Anilot">
+        <meta name="author" content="Anilot">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/jpreloader.css" />
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Background Slideshow -->
+        <ul class="bg-slideshow">
+            <li><span>bg01</span></li>
+            <li><span>bg02</span></li>
+            <li><span>bg03</span></li>
+            <li><span>bg04</span></li>
+        </ul>
+        <!-- Header -->
+		<header id="header">
+			<h1>Yanglei Li</h1>
+            <h2>
+            	<a href="resume.pdf" class="yellowlink">RESUME</a>
+            </h2>
+			<h2>
+            	<a href="about_me.html" class="greenlink">ABOUT ME</a>
+            </h2>
+            <h2>
+                <a href="projects.html" class="pinklink">PROJECTS</a>
+            </h2>
+            
+			<div class="clearfix"></div>
+		</header>
+        <section id="wrapper">
+			<div class="wrapper-inner">
+				<hgroup>
+					<h2>Coming Soon...</h2>
+					<h3>Site currently under construction</h3>
+				</hgroup>			
+
+			</div>
+   		</section>
+
+		<footer id="footer">
+			<span>&copy; 2013 <a href="http://www.anilot.tk">Anilot.TK</a>. Designed by <a href="http://www.anilot.tk/">Anilot</a>. Some rights reserved. Powered by jQuery and HTML5.        
+            </span>
+		</footer>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        
+        <!-- Link Fading -->
+        <script>
+        	$('a').mouseenter(function(){
+    			$(this).animate({
+        		color: '#ff0000'
+    			}, 1000);
+			}).mouseout(function(){
+    			$(this).animate({
+        		color: '#000000'
+    			}, 1000);
+			});
+		</script>
+        
+        <!-- Preloader -->        
+		<script>
+		$(document).ready( function() {
+
+			//navigation swap
+			$('#navigation a').on('click', function() {
+				if( !$(this).hasClass('btn-main') ) {
+					$('#navigation a')
+					.toggleClass('btn-secondary')
+					.toggleClass('btn-main');
+			
+					var tar = $(this).attr('href');
+					$('.holder').fadeOut(500, function() {
+						$(tar).fadeIn(500);
+					});
+				}	
+				return false;
+			});
+			$('#set2').hide();
+			$('#header').css('top', '-100px');
+			$('#footer').css('bottom', '-100px');
+			$('#wrapper').hide();
+
+	
+			//calling jPreLoader
+			$('body').jpreLoader({
+				splashID: "#jSplash",
+				loaderVPos: '50%',
+				splashFunction: function() {  
+					//passing Splash Screen script to jPreLoader
+					$('#jSplash').hide().fadeIn(800);			
+					
+				}
+			}, function() {	//callback function
+				$('#footer')
+				.animate({"bottom":0}, 500);
+				$('#header')
+				.animate({"top":0}, 800, function() {
+					$('#wrapper').fadeIn(1000);
+				});
+			});
+	
+
+		});
+		</script>
+        <!-- Google Analytics -->
+        <script>
+            var _gaq=[['_setAccount','UA-17970153-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

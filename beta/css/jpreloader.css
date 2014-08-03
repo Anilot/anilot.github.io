@@ -1,0 +1,90 @@
+body{
+	display:none;
+}
+#jpreOverlay {  /* Background */
+	background-color: #242529;
+	background-image: -moz-linear-gradient(top, #333438 0%, #242529 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333438), color-stop(100%,#242529));
+	background-image: -webkit-linear-gradient(top, #333438 0%,#242529 100%);
+	background-image: -o-linear-gradient(top, #333438 0%,#242529 100%);
+	background-image: -ms-linear-gradient(top, #333438 0%,#242529 100%);
+	background-image: linear-gradient(to bottom, #333438 0%,#242529 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333438', endColorstr='#242529',GradientType=1 );
+}
+
+#jpreLoader{  /* Bar Container */
+	width:400px;
+	height:4px;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	
+	box-shadow:0 0 0px 3px #202125;
+	-moz-box-shadow:0 0 0px 3px #202125;
+	-webkit-box-shadow:0 0 0px 3px #202125;
+		
+	background-color:#202125;
+}
+#jpreBar {	/* Bar */
+	border-radius:4x;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	
+	background-size:4px 4px;
+	-moz-background-size:4px 4px;
+	-webkit-background-size:4px 4px;
+	-o-background-size:4px 4px;
+	
+	background-color:#AEE113;
+}
+#jprePercentage {
+	color:#AEE113;
+	font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight:bold;
+	text-align:center;
+	text-shadow:1px 1px 1px #333;
+	top:100%;
+}
+
+
+@-webkit-keyframes progress {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -60px -60px;
+  }
+}
+@-moz-keyframes progress {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -60px -60px;
+  }
+}
+@-ms-keyframes progress {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -60px -60px;
+  }
+}
+@-o-keyframes progress {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -60px -60px;
+  }
+}
+@keyframes progress {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -60px -60px;
+  }
+}
