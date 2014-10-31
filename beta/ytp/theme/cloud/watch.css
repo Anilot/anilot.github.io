@@ -1,5 +1,9 @@
+#watchRightCol{
+	padding: 20px;
+}
 .desBox {
-	font-size: 12px;
+	padding: 10px;
+	font-size: 13px;
 	border: 1px solid #666666;
 }
 .desfull {
@@ -16,11 +20,13 @@
 #falseVideoField {
 	-webkit-transition: height .25s linear;
 	transition: height .25s linear;
+	padding: 20px;
 }
 #trueVideoField {
 	position: absolute;
 	visibility: visible;
 	text-align: center;
+	margin: 20px;
 }
 #player_object {
 	width:100%;

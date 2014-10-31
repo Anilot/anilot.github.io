@@ -1,4 +1,3 @@
-<img src="images/ad/ddxb.png" width="160" height="180" align="right">
 <p>Watch Youtube videos through proxy</p>
 <table width="100%">
 <tr>

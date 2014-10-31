@@ -29,10 +29,11 @@ global $tit,$ID;  ?>
   </div>
   <div id="spacer1"></div>
 <?php } ?>
-<table width="100%" border="0" >
+<table width="100%" border="0" id="watchRightCol">
   <tr> 
     <td valign="top" id="falseVideoField" style="height:391px;width: 640px"></td>
-    <td valign="top" rowspan="2"><div class="miniTitle">
+    <td valign="top" rowspan="2">
+      <div class="miniTitle">
         <?php echo Description; ?>
       </div>
       <div class="desBox"> 
@@ -124,19 +125,28 @@ global $tit,$ID;  ?>
       </div>
 	  <?php foreach ($qualitylist as $t_num) {?>
       <a href="lib/vs.php?q=<?php echo $t_num; ?>&id=<?php echo $ID;?>">·<?php echo $QualityList[$t_num]; ?></a><br>
-      <?php 
-		}
-	?>
+      <?php }
+	   ?>
       <br><div class="miniTitle"><?php echo ShareTo; ?></div>
       <?php 
 $watchURL='http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 foreach ($ShareTo as $WayName=>$WayURL) {?>
       <a rel="nofollow" target="_blank" href="<?php echo str_replace('%VNAME%',urlencode($xml->title),str_replace('%VID%',$ID,str_replace('%WATCHURL%',urlencode($watchURL),$WayURL))); ?>"><?php echo $WayName; ?></a><br>
       <?php } ?>
+      <br>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- blog -->
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:300px;height:250px"
+           data-ad-client="ca-pub-4414960646629939"
+           data-ad-slot="4242734405"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </td>
   </tr>
   <tr>
-    <td valign="top">
+    <td>
 		<?php 
 			if ($extrainfomation != '') {	//Check if there is Extra info
 				echo '<div class="miniTitle">'.YouTubeExtraInfo.'</div>';
