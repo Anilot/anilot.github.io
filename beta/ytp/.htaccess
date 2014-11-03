@@ -1,7 +1,5 @@
 ErrorDocument 404 /baderr.html
 RewriteEngine on
-RewriteBase /
-RewriteRule /watch?v=(.*) /watch.php
 
 
 RewriteCond %{HTTPS} !=on
@@ -32,3 +30,7 @@ RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI}/ [L,R=301]
 
 # Prevent directory listings
 Options All -Indexes
+
+
+RewriteBase /
+RewriteRule /watch?v=(.*) /watch.php
