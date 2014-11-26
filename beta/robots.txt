@@ -1,3 +1,11 @@
 # robotstxt.org/
 
 User-agent: *
+Disallow: /ytp/admin/
+Disallow: /ytp/theme/
+Disallow: /ytp/plugin/
+Disallow: /ytp/lib/
+Disallow: /ytp/images/
+Disallow: /ytp/local/
+Disallow: /ytp/stat/
+Disallow: /ytp/orderby
