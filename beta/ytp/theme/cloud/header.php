@@ -19,23 +19,30 @@ flush();
     <td>
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr> 
-          <td><form action="find.php" method="get" target="_self" onSubmit="searchfilter('keyword','keyword2');">
+          <td>
+            <form action="find.php" method="get" target="_self">
+            <input name="keyword" type="text" size="20" maxlength="80">
+<!--
+          <form action="find.php" method="get" target="_self" onSubmit="searchfilter('keyword','keyword2');">
               <input name="" type="text" size="20" maxlength="80" id="keyword">
               <input name="keyword" type="hidden" size="20" maxlength="80" id="keyword2">
               <input name="ss" type="hidden" size="20" maxlength="80" value="y">
 			  <input name="type" type="hidden" value="search">
               <input type="submit" value="<?php echo Search; ?>"><span class="autohidden">
-			  <input type="submit" value="<?php echo SearchPlaylist; ?>" onClick="document.getElementsByName('type')[0].value='searchlist';">
-			  <a href="find_ex.php"><?php echo AdvancedSearch; ?></a>
-			  </span>
+			  -->
+        <input name="type" type="hidden" value="search">
+              <input type="submit" value="<?php echo Search; ?>"><span class="autohidden">
+        <input type="submit" value="<?php echo SearchPlaylist; ?>" onClick="document.getElementsByName('type')[0].value='searchlist';">
+        <a href="find_ex.php"><?php echo AdvancedSearch; ?></a>
+        </span>
             </form></td>
         </tr>
         <tr> 
           <td class="video_types">
-			<?php foreach($Special_Titles as $id__=>$name__) {?>
-			<a href="find.php?type=<?php echo $id__;?>"><?php echo $name__;?></a>&nbsp;|&nbsp; 
-			<?php } ?>
-			<a href="category.php"><?php echo Category;?></a>
+      <?php foreach($Special_Titles as $id__=>$name__) {?>
+      <a href="find.php?type=<?php echo $id__;?>"><?php echo $name__;?></a>&nbsp;|&nbsp; 
+      <?php } ?>
+      <a href="category.php"><?php echo Category;?></a>
           </td>
         </tr>
         <tr>
@@ -43,13 +50,8 @@ flush();
         </tr>
         <tr> 
           <td align="right">
-<a href="orderby.php" title="<?php echo OrderbyChooser; ?>"><?php echo YourOrderbyIs; ?></a><select name="lstOrderby" onChange="parent.location='orderby.php?back&change='+this.options[this.selectedIndex].value;">
-<?php foreach($OrderbyCode as $oid=>$oname) {?>
-<option<?php if ($_SESSION["orderby"]==$oid) echo ' selected'; ?> value="<?php echo $oid; ?>"><?php echo $oname; ?></option>
-<?php } ?>
-</select> |
-<?php flush();
-echo YourLangIs; ?><a href="lang.php" title="<?php echo LangChooser; ?>"><?php echo $LangCode[$_SESSION["lang"]]; ?></a> |
+<?php echo YourOrderbyIs; ?><a href="orderby.php" title="<?php echo OrderbyChooser; ?>"><?php echo $OrderbyCode[$_SESSION["orderby"]]; ?></a> |
+<?php echo YourLangIs; ?><a href="lang.php" title="<?php echo LangChooser; ?>"><?php echo $LangCode[$_SESSION["lang"]]; ?></a> |
 <?php echo YourLocalIs; ?><a href="local.php" title="<?php echo LocalChooser; ?>"><img class="localimg" src="images/cc/<?php echo $_SESSION["local"]; ?>.png"><?php echo $CountryCode[$_SESSION["local"]]; ?></a>
 </td>
         </tr>
@@ -60,5 +62,5 @@ echo YourLangIs; ?><a href="lang.php" title="<?php echo LangChooser; ?>"><?php e
 if (function_exists("ExtraHead2")) ExtraHead2();?>
 <table width="100%" border="0">
   <tr><?php if ($pageHideLeft!=1) { ?>
-  <td valign="top" width="1"><?php include('category_list.php'); ?></td><?php } flush();?>
+  <td valign="top" width="1"><?php include('category_list.php'); ?></td><?php } ?>
   <td valign="top" id="content_datas">
